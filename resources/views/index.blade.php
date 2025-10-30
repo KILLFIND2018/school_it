@@ -47,7 +47,7 @@
         </div>
         <div class="direction">
             <h1>Направления обучения</h1>
-            <table>
+            <table class="dir_table">
                 <tr>
                     <th>№</th>
                     <th>Направление</th>
@@ -55,43 +55,43 @@
                     <th>Цена</th>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td><img src="/img/icons/1.svg" alt=""></td>
                     <td>Кибербезопасность</td>
                     <td>Учим защищать данные, работать с паролями, антивирусами и сетевыми угрозами.</td>
                     <td>от 2000 ₽ / занятие</td>
                 </tr>
                 <tr>
-                    <td>2</td>
+                    <td><img src="/img/icons/2.svg" alt=""></td>
                     <td>Создание сайтов</td>
                     <td>HTML, CSS, JavaScript - ребёнок создаёт свой первый сайт.</td>
                     <td>от 2000 ₽</td>
                 </tr>
                 <tr>
-                    <td>3</td>
+                    <td><img src="/img/icons/3.svg" alt=""></td>
                     <td>Разработка мобильных приложений</td>
                     <td>Приложения для Android и iOS — от идеи до публикации. </td>
                     <td> от 2000 ₽</td>
                 </tr>
                 <tr>
-                    <td>4</td>
+                    <td><img src="/img/icons/4.svg" alt=""></td>
                     <td>Работа с нейросетями</td>
                     <td>ChatGPT, Midjourney, Copilot — учим использовать ИИ с умом.</td>
                     <td>от 2000 ₽</td>
                 </tr>
                 <tr>
-                    <td>5</td>
+                    <td><img src="/img/icons/5.svg" alt=""></td>
                     <td>Программирование игр</td>
                     <td>Unity и Python - создаём игры и анимации.</td>
                     <td>от 2000 ₽</td>
                 </tr>
                 <tr>
-                    <td>6</td>
+                    <td><img src="/img/icons/6.svg" alt=""></td>
                     <td>IT-менеджмент и стартапы</td>
                     <td>Учим детей работать в команде, развиваем лидерство и мышление предпринимателя.</td>
                     <td>от 2000 ₽</td>
                 </tr>
                 <tr>
-                    <td>7</td>
+                    <td><img src="/img/icons/7.svg" alt=""></td>
                     <td> Веб-дизайн и UX/UI</td>
                     <td>Обучаем визуальному мышлению и проектированию интерфейсов.</td>
                     <td> от 2000 ₽</td>
@@ -126,15 +126,15 @@
                     <li>Выпускной проект и международный сертификат.</li>
                 </ul>
             </div>
-        <p>«Мы берём только мотивированных детей — успех возможен только при реальном интересе!»</p>
+        <i>«Мы берём только мотивированных детей — успех возможен только при реальном интересе!»</i>
         </div>
         <div class="reviews">
             <div class="review-card">
-                <img src="" alt="Отзыв 1">
+                <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="Отзыв 1">
                 <p>Мой сын создал свой первый сайт за месяц! Теперь хочет стать веб-разработчиком <i>Анна, мама Артёма, 11 лет</i></p>
             </div>
             <div class="review-card">
-                <img src="" alt="Отзыв 1">
+                <img src="https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" alt="Отзыв 1">
                 <p>Дочь научилась работать с нейросетями и теперь делает школьные проекты в 3 раза быстрее! <i>Ольга, мама Алины, 12 </i></p>
             </div>
         </div>
@@ -151,6 +151,7 @@
             </div>
             <div class="footer_docs"><a href="">Политика конфиденциальности</a></div>
         </div>
+        <!--
         <div class="feedback">
             <h1>Запишитесь на бесплатный первый урок!</h1>
             <form action="" method="post">
@@ -171,6 +172,7 @@
                 <button type="submit" class="btn btn-primary w-100">Отправить заявку</button>
             </form>
         </div>
+        -->
     </div>
 </body>
 </html>
