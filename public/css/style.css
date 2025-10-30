@@ -90,21 +90,34 @@ body {
 
 
 
-
+/*Блок для кого нужно обучение*/
 .why-for-child img {
     width: 32px;
     height: auto;
 }
 
-.why-for-child ul {
+.why-for-child>ul {
     list-style: none;
 }
+
+.why-for-child>ul>li {
+    display: flex;
+}
+
+.why-for-child>ul>li>p {
+    margin: 10px;
+}
+
+
+
 
 .certificate_garant img {
     width: 100%;
     height: auto;
 }
 
+
+/*блок подвала*/
 .footer {
     display: flex;
     flex-direction: row;
