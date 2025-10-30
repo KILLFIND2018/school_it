@@ -108,6 +108,13 @@ body {
     margin: 10px;
 }
 
+/*блок направления*/
+.direction {
+    overflow-x: auto;
+    width: 80%;
+}
+
+
 /*таблица*/
 
 .dir_table {
@@ -115,6 +122,9 @@ body {
     color: #10bad1;
     background-color: #0089ff29;
     margin: 20px 0 20px 0;
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
 }
 
 th {
@@ -201,6 +211,6 @@ td {
     }
 
     .feedbakers>.btn {
-        width: 75%;
+        width: 100%;
     }
 }
