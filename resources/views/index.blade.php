@@ -20,7 +20,7 @@
                         Бесплатный первый урок — определим желание и потенциал ребёнка.
                         Только мотивированные дети смогут попасть в программу!
                     </p>
-                    <button class="btn">Записаться на бесплатный урок</button>
+                    <button class="btn btn-warning openModalBtn">Записаться на бесплатный урок</button>
                 </div>
 
                 <div class="about-image">
@@ -151,28 +151,264 @@
             </div>
             <div class="footer_docs"><a href="">Политика конфиденциальности</a></div>
         </div>
-        <!--
-        <div class="feedback">
-            <h1>Запишитесь на бесплатный первый урок!</h1>
-            <form action="" method="post">
-                @csrf
-                <div class="mb-3">
-                    <label for=""></label>
-                    <input type="text" name="" id="">
+        @if (Session::has('success'))
+            <div class="modal" id="success_get_data" style="display: block;">
+                <div class="container-fluid">
+                    <div class="modal_window">
+                        <div class="modal-container">
+                            <button class="close-modal" id = "btn_close_modal"><img alt="Закрыть" src="/img/icons/close.svg"></button>
+                            <p>Данные отправлены</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for=""></label>
-                    <input type="number" name="" id="">
-                </div>
-                <div class="mb-3">
-                    <label for=""></label>
-                    <input type="tel" name="" id="">
-                </div>
+            </div>
+        @endif
+        <div class="modal" id="getconsult" @if($errors->any()) style="display: block;" @endif>
+            <div class="container-fluid">
+                <div class="modal_window">
+                    <div class="modal-container">
+                        <button class="close-modal" id="btn_close_modal">
+                            <img alt="Закрыть" src="/img/icons/close.svg">
+                        </button>
+                        <h3 class="mb-4">Оставить заявку на бесплатную консультацию</h3>
 
-                <button type="submit" class="btn btn-primary w-100">Отправить заявку</button>
-            </form>
+                        <form action="{{ route('sender') }}" method="post" class="needs-validation" novalidate>
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    <strong>Ошибки валидации:</strong>
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            @csrf
+
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Фамилия и Имя *</label>
+                                <input
+                                    type="text"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    id="name"
+                                    name="name"
+                                    value="{{ old('name') }}"
+                                    required>
+                                @error('name')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Телефон *</label>
+                                <input
+                                    type="tel"
+                                    class="form-control @error('phone') is-invalid @enderror"
+                                    id="phone"
+                                    name="phone"
+                                    value="{{ old('phone') }}"
+                                    required>
+                                @error('phone')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Возраст *</label>
+                                <input
+                                    type="number"
+                                    class="form-control @error('age') is-invalid @enderror"
+                                    id="age"
+                                    name="age"
+                                    value="{{ old('age') }}"
+                                    required>
+                                @error('age')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary w-100">Отправить заявку</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        -->
     </div>
+
+    <script>
+
+
+
+        // Bootstrap валидация формы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Функция для Bootstrap валидации
+            (function () {
+                'use strict'
+
+                let forms = document.querySelectorAll('.needs-validation')
+
+                Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+            })()
+
+            const modal = document.getElementById('getconsult');
+            const modal_getter = document.getElementById('success_get_data');
+            const closeButtons = document.querySelectorAll(".close-modal");
+            const openButtons = document.querySelectorAll(".openModalBtn");
+
+            // Функция для открытия модального окна
+            function openModal() {
+                if (modal) {
+                    modal.style.display = "block";
+                    // Сбрасываем валидацию при открытии модального окна
+                    const form = document.querySelector('.needs-validation');
+                    if (form) {
+                        form.classList.remove('was-validated');
+                        // Сбрасываем сообщения об ошибках
+                        const invalidFields = form.querySelectorAll('.is-invalid');
+                        invalidFields.forEach(field => {
+                            field.classList.remove('is-invalid');
+                        });
+                    }
+                }
+            }
+
+            // Функция для закрытия модального окна
+            function closeModal() {
+                if (modal) modal.style.display = "none";
+                if (modal_getter) modal_getter.style.display = "none";
+            }
+
+            // Обработчики для кнопок открытия
+            openButtons.forEach(btn => {
+                btn.addEventListener("click", openModal);
+            });
+
+            // Обработчики для кнопок закрытия
+            closeButtons.forEach(btn => {
+                btn.addEventListener("click", closeModal);
+            });
+
+            // Закрытие по клику вне окна
+            window.addEventListener("click", (e) => {
+                if (e.target === modal || e.target === modal_getter) {
+                    closeModal();
+                }
+            });
+
+            // Автоматическое открытие при ошибках
+            @if($errors->any())
+            openModal();
+
+            // Добавляем классы ошибок для существующих ошибок
+            setTimeout(() => {
+                @error('name')
+                document.getElementById('name')?.classList.add('is-invalid');
+                @enderror
+                @error('age')
+                document.getElementById('age')?.classList.add('is-invalid');
+                @enderror
+                @error('phone')
+                document.getElementById('phone')?.classList.add('is-invalid');
+                @enderror
+            }, 100);
+            @endif
+
+            // Добавляем обработчики для реальной валидации при вводе
+            const form = document.querySelector('.needs-validation');
+            if (form) {
+                const inputs = form.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.addEventListener('input', function() {
+                        if (this.checkValidity()) {
+                            this.classList.remove('is-invalid');
+                            this.classList.add('is-valid');
+                        } else {
+                            this.classList.remove('is-valid');
+                        }
+                    });
+
+                    input.addEventListener('blur', function() {
+                        if (!this.checkValidity()) {
+                            this.classList.add('is-invalid');
+                        }
+                    });
+                });
+            }
+
+
+        });
+
+
+
+        //Телефонная маска
+        document.addEventListener('DOMContentLoaded', function () {
+            const phoneInput = document.getElementById('phone');
+
+            phoneInput.addEventListener('input', function () {
+                let value = phoneInput.value.replace(/\D/g, ''); // удаляем всё кроме цифр
+
+                // если начинается с 8 — заменим на 7 (чтобы всегда был +7)
+                if (value.startsWith('8')) value = '7' + value.slice(1);
+                if (!value.startsWith('7')) value = '7' + value;
+
+                // ограничим максимум 11 цифр (7 + 10 цифр номера)
+                value = value.substring(0, 11);
+
+                // форматируем по шаблону
+                let formatted = '+7';
+                if (value.length > 1) formatted += ' (' + value.substring(1, 4);
+                if (value.length >= 4) formatted += ') ';
+                if (value.length >= 5) formatted += value.substring(4, 7);
+                if (value.length >= 7) formatted += '-' + value.substring(7, 9);
+                if (value.length >= 9) formatted += '-' + value.substring(9, 11);
+
+                phoneInput.value = formatted;
+            });
+
+            // при вставке из буфера — форматируем тоже
+            phoneInput.addEventListener('paste', function (e) {
+                e.preventDefault();
+                const text = (e.clipboardData || window.clipboardData).getData('text');
+                const digits = text.replace(/\D/g, '');
+                phoneInput.value = '+7 ' + digits.substring(1, 10);
+                phoneInput.dispatchEvent(new Event('input'));
+            });
+
+            // при фокусе, если пусто — подставляем +7
+            phoneInput.addEventListener('focus', function () {
+                if (phoneInput.value.trim() === '') {
+                    phoneInput.value = '+7 ';
+                }
+            });
+
+            // если пользователь стёр всё — возвращаем пустую строку
+            phoneInput.addEventListener('blur', function () {
+                if (phoneInput.value === '+7 ' || phoneInput.value === '+7') {
+                    phoneInput.value = '';
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
