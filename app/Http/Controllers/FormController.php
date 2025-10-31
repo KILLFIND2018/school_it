@@ -16,7 +16,7 @@ class FormController extends Controller
         $data->age = $request->age;
         $data->phone = $request->phone;
         //отправляет туда все данные и отправляет на страницу result.blade
-        Mail::to("killfind@yandex.ru")->send(new SenderMail($data));
+        Mail::to("dovodsupport@reverseman3.ru")->send(new SenderMail($data));
         //Если данные свалидированны, отобрази блок success
         return back()->with('success', 'Данные успешно отправлены!');
     }
