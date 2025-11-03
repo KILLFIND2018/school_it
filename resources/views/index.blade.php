@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="онлайн обучение, дистанционные курсы, школьники, ЕГЭ, ОГЭ, программирование, математика, информатика, онлайн школа, обучение детей, образование">
     <title>Test</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('/css/style.css?v=1') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css?v=2') }}">
 
 </head>
 <body>
@@ -47,56 +48,59 @@
         </div>
         <div class="direction">
             <h1>Направления обучения</h1>
-            <table class="dir_table">
-                <tr>
-                    <th>№</th>
-                    <th>Направление</th>
-                    <th>Краткое описание</th>
-                    <th>Цена</th>
-                </tr>
-                <tr>
-                    <td><img src="/img/icons/1.svg" alt=""></td>
-                    <td>Кибербезопасность</td>
-                    <td>Учим защищать данные, работать с паролями, антивирусами и сетевыми угрозами.</td>
-                    <td>от 2000 ₽ / занятие</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/icons/2.svg" alt=""></td>
-                    <td>Создание сайтов</td>
-                    <td>HTML, CSS, JavaScript - ребёнок создаёт свой первый сайт.</td>
-                    <td>от 2000 ₽</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/icons/3.svg" alt=""></td>
-                    <td>Разработка мобильных приложений</td>
-                    <td>Приложения для Android и iOS — от идеи до публикации. </td>
-                    <td> от 2000 ₽</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/icons/4.svg" alt=""></td>
-                    <td>Работа с нейросетями</td>
-                    <td>ChatGPT, Midjourney, Copilot — учим использовать ИИ с умом.</td>
-                    <td>от 2000 ₽</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/icons/5.svg" alt=""></td>
-                    <td>Программирование игр</td>
-                    <td>Unity и Python - создаём игры и анимации.</td>
-                    <td>от 2000 ₽</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/icons/6.svg" alt=""></td>
-                    <td>IT-менеджмент и стартапы</td>
-                    <td>Учим детей работать в команде, развиваем лидерство и мышление предпринимателя.</td>
-                    <td>от 2000 ₽</td>
-                </tr>
-                <tr>
-                    <td><img src="/img/icons/7.svg" alt=""></td>
-                    <td> Веб-дизайн и UX/UI</td>
-                    <td>Обучаем визуальному мышлению и проектированию интерфейсов.</td>
-                    <td> от 2000 ₽</td>
-                </tr>
-            </table>
+            <div class="table-container">
+                <table class="dir_table">
+                    <tr>
+                        <th>№</th>
+                        <th>Направление</th>
+                        <th>Краткое описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/icons/1.svg" alt=""></td>
+                        <td>Кибербезопасность</td>
+                        <td>Учим защищать данные, работать с паролями, антивирусами и сетевыми угрозами.</td>
+                        <td>от 2000 ₽ / занятие</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/icons/2.svg" alt=""></td>
+                        <td>Создание сайтов</td>
+                        <td>HTML, CSS, JavaScript - ребёнок создаёт свой первый сайт.</td>
+                        <td>от 2000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/icons/3.svg" alt=""></td>
+                        <td>Разработка мобильных приложений</td>
+                        <td>Приложения для Android и iOS — от идеи до публикации. </td>
+                        <td> от 2000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/icons/4.svg" alt=""></td>
+                        <td>Работа с нейросетями</td>
+                        <td>ChatGPT, Midjourney, Copilot — учим использовать ИИ с умом.</td>
+                        <td>от 2000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/icons/5.svg" alt=""></td>
+                        <td>Программирование игр</td>
+                        <td>Unity и Python - создаём игры и анимации.</td>
+                        <td>от 2000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/icons/6.svg" alt=""></td>
+                        <td>IT-менеджмент и стартапы</td>
+                        <td>Учим детей работать в команде, развиваем лидерство и мышление предпринимателя.</td>
+                        <td>от 2000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/icons/7.svg" alt=""></td>
+                        <td> Веб-дизайн и UX/UI</td>
+                        <td>Обучаем визуальному мышлению и проектированию интерфейсов.</td>
+                        <td> от 2000 ₽</td>
+                    </tr>
+                </table>
+            </div>
+
             <div class="feedbakers">
                 <button class="btn btn-warning openModalBtn">Записаться на бесплатный урок</button>
                 <i>Запишитесь на бесплатный первый урок и узнайте, подходит ли вашему ребёнку IT-путь!</i>
@@ -144,7 +148,7 @@
             <img src="/img/certificate.png" alt="">
         </div>
         <div class="footer">
-            <div class="footer_telephone"><a href="tel:89858055950" class="btn btn-lg btn-warning"><img src="/img/tel.svg" alt="tel"> +7 985 805 59 50</a></div>
+            <div class="footer_telephone"><a href="tel:89999999999" class="btn btn-lg btn-warning"><img src="/img/tel.svg" alt="tel"> +7 123 255 66 77</a></div>
             <div class="footer_social">
                 <a href=""><img src="/img/vk.svg" alt="vk"></a>
                 <a href=""><img src="/img/tg.svg" alt="vk"></a>

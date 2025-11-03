@@ -110,8 +110,7 @@ body {
 
 /*блок направления*/
 .direction {
-    overflow-x: auto;
-    width: 80%;
+    width: 100%;
 }
 
 
@@ -295,6 +294,11 @@ td {
 
 
 @media (max-width: 768px) {
+
+    .why-for-child, .direction, .roadmap_education, .reviews, .certificate_garant, .footer {
+        margin: 5px;
+    }
+
     .footer {
         display: flex;
         flex-direction: column;
@@ -334,6 +338,15 @@ td {
         width: 100%;
         height: auto;
         padding: 10px;
+    }
+
+    .direction {
+        width: 100%;
+    }
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
     }
 }
 
