@@ -8,7 +8,7 @@
     <meta name="keywords" content="онлайн обучение, дистанционные курсы, школьники, ЕГЭ, ОГЭ, программирование, математика, информатика, онлайн школа, обучение детей, образование">
     <title>Школа обучения IT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('/css/style.css?v=2') }}">
+    <link rel="stylesheet" href="{{ asset('/css/style.css?v=3') }}">
 
 </head>
 <body>
@@ -148,10 +148,9 @@
             <img src="/img/certificate.png" alt="">
         </div>
         <div class="footer">
-            <div class="footer_telephone"><a href="tel:89999999999" class="btn btn-lg btn-warning"><img src="/img/tel.svg" alt="tel"> +7 123 255 66 77</a></div>
+            <div class="footer_telephone"><a href="tel:89523524455" class="btn btn-lg btn-warning"><img src="/img/tel.svg" alt="tel">  +7 952 352 44 55</a></div>
             <div class="footer_social">
-                <a href=""><img src="/img/vk.svg" alt="vk"></a>
-                <a href=""><img src="/img/tg.svg" alt="vk"></a>
+                <a href="https://t.me/itdovod"><img src="/img/tg.svg" alt="vk"></a>
             </div>
             <div class="footer_docs"><a href="">Политика конфиденциальности</a></div>
         </div>

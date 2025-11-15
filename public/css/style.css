@@ -348,6 +348,10 @@ td {
         width: 100%;
         overflow-x: auto;
     }
+
+    .footer_social {
+        padding: 10px 0 10px 0;
+    }
 }
 
 
